@@ -117,7 +117,7 @@ runs:
     - name: Call Release Notes Generator
       id: release-notes-generator
       env:
-        INPUT_GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+        INPUT_SECRET_TOKEN: ${{ env.SECRET_TOKEN }}
         INPUT_TAG_NAME: ${{ inputs.tag-name }}
         INPUT_CHAPTERS: ${{ inputs.chapters }}
         INPUT_FROM_TAG_NAME: ${{ inputs.from-tag-name }}

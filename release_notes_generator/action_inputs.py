@@ -29,7 +29,7 @@ import yaml
 
 from release_notes_generator.utils.constants import (
     GITHUB_REPOSITORY,
-    GITHUB_TOKEN,
+    SECRET_TOKEN,
     TAG_NAME,
     CHAPTERS,
     PUBLISHED_AT,
@@ -72,11 +72,11 @@ class ActionInputs:
         return get_action_input(GITHUB_REPOSITORY)
 
     @staticmethod
-    def get_github_token() -> str:
+    def get_SECRET_TOKEN() -> str:
         """
         Get the GitHub token from the action inputs.
         """
-        return get_action_input(GITHUB_TOKEN)
+        return get_action_input(SECRET_TOKEN)
 
     @staticmethod
     def get_tag_name() -> str:

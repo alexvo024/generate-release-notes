@@ -22,7 +22,7 @@ jobs:
       - name: Check presence of release notes in PR description
         uses: AbsaOSS/release-notes-presence-check@v0.1.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
         with:
           github-repository: ${{ github.repository }}
           pr-number: ${{ github.event.number }}
