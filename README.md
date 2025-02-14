@@ -43,8 +43,8 @@ Generate Release Notes action is dedicated to enhance the quality and organizati
 - **Python 3.11+**: Ensure you have Python 3.11 installed on your system.
 
 ## Inputs
-### `SECRET_TOKEN`
-- **Description**: Your GitHub token for authentication. Store it as a secret and reference it in the workflow file as secrets.SECRET_TOKEN.
+### `GITHUB_TOKEN`
+- **Description**: Your GitHub token for authentication. Store it as a secret and reference it in the workflow file as secrets.GITHUB_TOKEN.
 - **Required**: Yes
 
 ### `tag-name`
@@ -143,7 +143,7 @@ Add the following step to your GitHub workflow (in example are used non-default 
   id: release_notes_generator
   uses: AbsaOSS/generate-release-notes@v0.2.0
   env:
-    SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}  
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
   with:
     tag-name: "v0.2.0"
     from-tag-name: "v0.1.0"
@@ -160,7 +160,7 @@ Add the following step to your GitHub workflow (in example are used non-default 
   id: release_notes_generator
   uses: AbsaOSS/generate-release-notes@v0.2.0
   env:
-    SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}  
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
   with:
     tag-name: "v0.2.0"
     from-tag-name: "v0.1.0"
@@ -406,7 +406,7 @@ export INPUT_VERBOSE="true"
 
 # CI in-build variables
 export GITHUB_REPOSITORY="< owner >/< repo-name >"
-export INPUT_SECRET_TOKEN=$(printenv <your-env-token-var>)
+export INPUT_GITHUB_TOKEN=$(printenv <your-env-token-var>)
 
 # Run the Python script
 python3 ./<path-to-action-project-root>/main.py

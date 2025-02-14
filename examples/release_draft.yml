@@ -28,7 +28,7 @@ jobs:
         id: check-version-tag
         uses: AbsaOSS/version-tag-check@v0.3.0
         env:
-          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
         with:
           github-repository: ${{ github.repository }}
           version-tag: ${{ github.event.inputs.tag-name }}
@@ -38,7 +38,7 @@ jobs:
         id: check-version-from-tag
         uses: AbsaOSS/version-tag-check@v0.3.0
         env:
-          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
         with:
           github-repository: ${{ github.repository }}
           version-tag: ${{ github.event.inputs.from-tag-name }}
@@ -48,7 +48,7 @@ jobs:
         id: generate_release_notes
         uses: AbsaOSS/generate-release-notes@v0.6.0
         env:
-          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
         with:
           tag-name: ${{ github.event.inputs.tag-name }}
           chapters: |
@@ -89,7 +89,7 @@ jobs:
       - name: Create Draft Release
         uses: softprops/action-gh-release@v1
         env:
-          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
         with:
           name: ${{ github.event.inputs.tag-name }}
           body: ${{ steps.generate_release_notes.outputs.release-notes }}

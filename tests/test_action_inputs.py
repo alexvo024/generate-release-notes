@@ -97,9 +97,9 @@ def test_get_github_repository(mocker):
     assert "owner/repo" == ActionInputs.get_github_repository()
 
 
-def test_get_SECRET_TOKEN(mocker):
+def test_get_GITHUB_TOKEN(mocker):
     mocker.patch("release_notes_generator.action_inputs.get_action_input", return_value="fake-token")
-    assert ActionInputs.get_SECRET_TOKEN() == "fake-token"
+    assert ActionInputs.get_GITHUB_TOKEN() == "fake-token"
 
 
 def test_get_tag_name(mocker):

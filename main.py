@@ -42,7 +42,7 @@ def run() -> None:
     logger.info("Starting 'Release Notes Generator' GitHub Action")
 
     # Authenticate with GitHub
-    py_github = Github(auth=Auth.Token(token=ActionInputs.get_SECRET_TOKEN()), per_page=100)
+    py_github = Github(auth=Auth.Token(token=ActionInputs.get_GITHUB_TOKEN()), per_page=100)
 
     ActionInputs.validate_inputs()
     # Load custom chapters configuration

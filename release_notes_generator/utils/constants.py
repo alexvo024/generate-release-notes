@@ -20,7 +20,7 @@ This module contains the constants used in the release notes generator.
 
 # Action inputs environment variables
 GITHUB_REPOSITORY = "GITHUB_REPOSITORY"
-SECRET_TOKEN = "github-token"
+GITHUB_TOKEN = "github-token"
 TAG_NAME = "tag-name"
 FROM_TAG_NAME = "from-tag-name"
 CHAPTERS = "chapters"
